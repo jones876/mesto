@@ -1,12 +1,12 @@
 .popup__container {
   padding: 0;
   margin: 0;
- position: absolute;
- max-width: 430px;
- min-width: 282px;
- padding: 0;
- width: 100%;
+  position: absolute;
+  max-width: 430px;
+  min-width: 282px;
+  width: 100%;
 }
+
 @media (max-width: 910px) {
   .popup__container {
     width: 282px;
