@@ -29,7 +29,7 @@
 8.JavaScript.
 
 ---
-[Ссылка на GitHub Pages]()
+[Ссылка на GitHub Pages](https://jones876.github.io/mesto/)
 
 ---
 
