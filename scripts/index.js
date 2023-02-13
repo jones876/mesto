@@ -2,7 +2,7 @@
 
 const editProfileBtn = document.querySelector('.profile__edit-btn');
 const popup = document.querySelector('.popup');
-const closeEditBtn = document.querySelector('.form__close-btn');
+const closeEditBtn = document.querySelector('.popup__close-btn');
 const userName = document.querySelector('.profile__name');
 const inputUserName = document.querySelector('.form__input_name');
 const userInfo = document.querySelector('.profile__description');
@@ -19,7 +19,6 @@ editProfileBtn.addEventListener('click', openPopup);
 
 function closePopup() {
   popup.classList.remove('popup_opened');
-  
 }
 
 closeEditBtn.addEventListener('click', closePopup);
