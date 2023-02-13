@@ -2,27 +2,32 @@
 
 const editProfileBtn = document.querySelector('.profile__edit-btn');
 const popup = document.querySelector('.popup');
-editProfileBtn.addEventListener('click', function(){
-  popup.classList.add('popup_opened');
-});
-
 const closeEditBtn = document.querySelector('.form__close-btn');
-closeEditBtn.addEventListener('click', function() {
-  popup.classList.remove('popup_opened');
-});
-
 const userName = document.querySelector('.profile__name');
-const inputUserName = document.querySelector('.form__input-name');
-inputUserName.value = userName.textContent;
+const inputUserName = document.querySelector('.form__input_name');
 const userInfo = document.querySelector('.profile__description');
-const inputUserInfo = document.querySelector('.form__input-info');
-inputUserInfo.value = userInfo.textContent;
-
+const inputUserInfo = document.querySelector('.form__input_info');
 const formElement = document.querySelector('.form');
+
+function openPopup(){
+  popup.classList.add('popup_opened');
+  inputUserName.value = userName.textContent;
+  inputUserInfo.value = userInfo.textContent;
+}
+
+editProfileBtn.addEventListener('click', openPopup);
+
+function closePopup() {
+  popup.classList.remove('popup_opened');
+  
+}
+
+closeEditBtn.addEventListener('click', closePopup);
+
 function handleFormSubmit (evt) {
   evt.preventDefault();
   userName.textContent = inputUserName.value;
-  userInfo.textContent = inputUserInfo.value
-  popup.classList.remove('popup_opened');
+  userInfo.textContent = inputUserInfo.value;
+  closePopup();
 }
 formElement.addEventListener('submit', handleFormSubmit);

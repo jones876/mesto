@@ -7,7 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid #FFFFFF;
-  background-color: #000000;
+  background-color: transparent;
   align-self: center;
   cursor: pointer;
   transition: opacity .3s ease;
@@ -21,5 +21,6 @@
   .profile__edit-btn {
     width: 18px;
     height: 18px;
+    background-size: 7.5px 7.5px;
   }
 }

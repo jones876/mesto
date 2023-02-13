@@ -10,9 +10,8 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  background-color: #000000;
+  background-color: transparent;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
   transition: opacity .3s ease;
 }

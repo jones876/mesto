@@ -12,7 +12,8 @@
   .form__header {
     font-size: 18px;
     line-height: 22px;
-    width: 238px;
+    max-width: 238px;
     padding-bottom: 69px;
+    width: 100%;
   }
 }
