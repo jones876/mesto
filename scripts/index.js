@@ -4,9 +4,9 @@ const editProfileBtn = document.querySelector('.profile__edit-btn');
 const popup = document.querySelector('.popup');
 const closeEditBtn = document.querySelector('.popup__close-btn');
 const userName = document.querySelector('.profile__name');
-const inputUserName = document.querySelector('.form__input_name');
+const inputUserName = document.querySelector('.form__input_type_name');
 const userInfo = document.querySelector('.profile__description');
-const inputUserInfo = document.querySelector('.form__input_info');
+const inputUserInfo = document.querySelector('.form__input_type_info');
 const formElement = document.querySelector('.form');
 
 function openPopup(){
