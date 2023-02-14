@@ -27,6 +27,7 @@
 6.Медиазапросы для адаптации.
 7.Git.
 8.JavaScript.
+9.Flexbox.
 
 ---
 [Ссылка на GitHub Pages](https://jones876.github.io/mesto/)
