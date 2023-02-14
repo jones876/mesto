@@ -10,5 +10,7 @@
 @media (max-width: 910px) {
   .profile__info-container {
     margin-top: 26px;
+    margin-left: 0;
+    padding-top: 0;
   }
 }
