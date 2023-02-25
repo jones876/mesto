@@ -33,55 +33,7 @@
 
     <section class="elements">
       <ul class="elements__list">
-        <li class="elements__item">
-          <img src="./images/photo/kaluga.jpg" alt="Калуга" class="elements__image">
-          <div class="elements__description">
-            <h2 class="elements__title">Калуга</h2>
-            <button class="elements__like-btn elements__like-btn_active" type="button">
-            </button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img src="./images/photo/moscow.jpg" alt="Москва" class="elements__image">
-          <div class="elements__description">
-            <h2 class="elements__title">Москва</h2>
-            <button class="elements__like-btn elements__like-btn_active" type="button">
-            </button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img src="./images/photo/piter.jpg" alt="Санкт-Петербург" class="elements__image">
-          <div class="elements__description">
-            <h2 class="elements__title">Санкт-Петербург</h2>
-            <button class="elements__like-btn elements__like-btn_active" type="button">
-            </button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img src="./images/photo/komi.jpg" alt="Республика Коми" class="elements__image">
-          <div class="elements__description">
-            <h2 class="elements__title">Республика Коми</h2>
-            <button class="elements__like-btn elements__like-btn_active" type="button">
-            </button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img src="./images/photo/oka.jpg" alt="Река Ока" class="elements__image">
-          <div class="elements__description">
-            <h2 class="elements__title">Река Ока</h2>
-            <button class="elements__like-btn elements__like-btn_active" type="button">
-            </button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img src="./images/photo/museum-of-Cosmonautics.jpg" alt="Музей космонавтики в Калуге"
-            class="elements__image">
-          <div class="elements__description">
-            <h2 class="elements__title">Музей космонавтики в Калуге</h2>
-            <button class="elements__like-btn elements__like-btn_active" type="button">
-            </button>
-          </div>
-        </li>
+
       </ul>
     </section>
   </main>
@@ -89,7 +41,7 @@
     <p class="footer__info">© 2023 Mesto Russia</p>
   </footer>
 
-  <div class="popup">
+  <div class="popup popup-edit-profile">
     <div class="popup__container">
       <form class="form" name="edit-form" method="GET" action="#">
         <h3 class="form__header">Редактировать профиль</h3>
@@ -104,6 +56,43 @@
       <button class="popup__close-btn" type="button"></button>
     </div>
   </div>
+
+  <div class="popup popup-add-card">
+    <div class="popup__container">
+      <form class="form form__add" name="add-card" method="GET" action="#">
+        <h3 class="form__header">Новое место</h3>
+        <fieldset class="form__fieldset">
+          <input type="text" class="form__input form__input_type_title" name="card-name" placeholder="Название">
+          <input type="url" class="form__input form__input_type_link" name="card-link" placeholder="Ссылка на картинку">
+        </fieldset>
+        <button class="form__btn form__btn-add" type="submit">
+          Создать
+        </button>
+      </form>
+      <button class="popup__close-btn popup__close-add" type="button"></button>
+    </div>
+  </div>
+
+  <div class="popup popup__show-image">
+    <div class="popup__full-image">
+      <img class="popup__img" src="#" alt="Изображение места">
+      <h3 class="popup__img-title"></h3>
+      <button class="popup__close-btn popup__close-img" type="button"></button>
+    </div>
+  </div>
+  </div>
+  <template id="template-card">
+    <li class="elements__item">
+      <img src="#" alt="Изображение места" class="elements__image">
+      <div class="elements__description">
+        <h2 class="elements__title"></h2>
+        <button class="elements__like-btn" type="button">
+        </button>
+      </div>
+      <button class="elements__del-btn" type="button"></button>
+    </li>
+  </template>
+
   <script src="./scripts/index.js"></script>
 </body>
 
