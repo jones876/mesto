@@ -11,13 +11,13 @@ const editProf = document.querySelector(".popup-edit-profile");
 const addCard = document.querySelector(".popup-add-card");
 const closeAddBtn = document.querySelector(".popup__close-add");
 const cardContainer = document.querySelector(".elements__list");
-const showImg = document.querySelector(".popup__show-image");
+const showImg = document.querySelector(".popup-show-image");
 const fullImg = document.querySelector(".popup__img");
 const closeImgBtn = document.querySelector(".popup__close-img");
 const imgTitle = document.querySelector(".popup__img-title");
 const inputCardName = document.querySelector(".form__input_type_title");
 const inputCardLink = document.querySelector(".form__input_type_link");
-const formElementAdd = document.querySelector(".form__add");
+const formElementAdd = document.querySelector(".form-add");
 
 addCardBtn.addEventListener("click", () => {
   openPopup(addCard);
