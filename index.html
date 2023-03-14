@@ -43,11 +43,13 @@
 
   <div class="popup popup-edit-profile">
     <div class="popup__container">
-      <form class="form" name="edit-form" method="GET" action="#">
+      <form class="form" name="edit-form" method="GET" action="#" novalidate>
         <h3 class="form__header">Редактировать профиль</h3>
         <fieldset class="form__fieldset">
-          <input type="text" class="form__input form__input_type_name" name="name" placeholder="Имя">
-          <input type="text" class="form__input form__input_type_info" name="about" placeholder="О себе">
+          <input type="text" class="form__input form__input_type_name" name="name" id="username" placeholder="Имя"  minlength="2" maxlength="40" required>
+          <span class="form__input-error username-error"></span>
+          <input type="text" class="form__input form__input_type_info" name="about" id="userabout" placeholder="О себе" required minlength="2" maxlength="200">
+          <span class="form__input-error userabout-error"></span>
         </fieldset>
         <button class="form__btn" type="submit">
           Сохранить
@@ -59,13 +61,15 @@
 
   <div class="popup popup-add-card">
     <div class="popup__container">
-      <form class="form form-add" name="add-card" method="GET" action="#">
+      <form class="form form-add" name="add-card" method="GET" action="#" novalidate>
         <h3 class="form__header">Новое место</h3>
         <fieldset class="form__fieldset">
-          <input type="text" class="form__input form__input_type_title" name="card-name" placeholder="Название">
-          <input type="url" class="form__input form__input_type_link" name="card-link" placeholder="Ссылка на картинку">
+          <input type="text" class="form__input form__input_type_title" name="card-name" id="cardname" placeholder="Название" required minlength="2" maxlength="30">
+          <span class="form__input-error cardname-error"></span>
+          <input type="url" class="form__input form__input_type_link" name="card-link" id="cardlink" placeholder="Ссылка на картинку" required>
+          <span class="form__input-error cardlink-error"></span>
         </fieldset>
-        <button class="form__btn form__btn-add" type="submit">
+        <button class="form__btn form__btn-add" type="submit" >
           Создать
         </button>
       </form>
@@ -80,7 +84,7 @@
       <button class="popup__close-btn popup__close-img" type="button"></button>
     </div>
   </div>
-  
+
   <template id="template-card">
     <li class="elements__item">
       <img src="#" alt="Изображение места" class="elements__image">
@@ -95,6 +99,8 @@
 
   <script src="./scripts/constants.js"></script>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
+
 
 </body>
 
