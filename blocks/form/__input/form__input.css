@@ -8,11 +8,11 @@
   line-height: 17px;
   color: #000000;
   padding-bottom: 13px;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
-  /* margin-bottom: 30px; */
-margin-top: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, .2); 
+  margin-top: 25px;
   outline: none;
 }
+
 @media (max-width: 910px) {}
 .form__input {
   margin-top: 20px;
