@@ -12,8 +12,9 @@
   margin-top: 25px;
   outline: none;
 }
-
-@media (max-width: 910px) {}
-.form__input {
-  margin-top: 20px;
+  
+@media (max-width: 910px) {
+ .form__input {
+   margin-top: 20px;
+}
 }
