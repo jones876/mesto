@@ -1,10 +1,10 @@
 const profileEditButton = document.querySelector('.profile__edit-btn');
-const popupCloseButton = document.querySelector('.popup__close-btn');
+const profileCloseButton = document.querySelector('.popup__close-btn');
 const userName = document.querySelector('.profile__name');
 const userNameInput = document.querySelector('.form__input_type_name');
 const userInfo = document.querySelector('.profile__description');
 const userInfoInput = document.querySelector('.form__input_type_info');
-const formEditProfile = document.querySelector('.form');
+const formEditProfile = document.forms['edit-form'];
 const addCardButton = document.querySelector('.profile__add-btn');
 const profileEditPopup = document.querySelector('.popup-edit-profile');
 const addCardPopup = document.querySelector('.popup-add-card');
@@ -16,8 +16,8 @@ const imageCloseButton = document.querySelector('.popup__close-img');
 const popupImageTitle = document.querySelector('.popup__img-title');
 const nameCardInput = document.querySelector('.form__input_type_title');
 const linkCardInput = document.querySelector('.form__input_type_link');
-const formAddElement = document.querySelector('.form-add');
-const inactiveButton = document.querySelector('.form__btn-add');
+const formAddElement = document.forms['add-card'];
+const cardSubmitButton = document.querySelector('.form__btn-add');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -31,15 +31,14 @@ function closePopup(popup) {
 }
 
 function closePopupEsc(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
   if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   }
 }
 function closePopupOverlay(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
-  if (evt.target === popupOpened) {
-    closePopup(popupOpened);
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
   }
 }
 function submitEditProfileForm(evt) {
@@ -92,11 +91,6 @@ function submitAddCardForm(evt) {
   addNewCard(item);
   closePopup(addCardPopup);
   evt.target.reset();
-
-  if (nameCardInput.value === '' || linkCardInput.value === '') {
-    inactiveButton.classList.add('form__btn_inactive');
-    inactiveButton.setAttribute('disabled', true);
-  }
 }
 
 profileEditButton.addEventListener('click', () => {
@@ -104,13 +98,11 @@ profileEditButton.addEventListener('click', () => {
   userNameInput.value = userName.textContent;
   userInfoInput.value = userInfo.textContent;
 });
-popupCloseButton.addEventListener('click', () => {
+profileCloseButton.addEventListener('click', () => {
   closePopup(profileEditPopup);
 });
 
 addCardButton.addEventListener('click', () => {
-  inactiveButton.classList.add('form__btn_inactive');
-  inactiveButton.setAttribute('disabled', true);
   openPopup(addCardPopup);
 });
 popupAddCloseButton.addEventListener('click', () => {
