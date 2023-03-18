@@ -37,8 +37,7 @@ const setEventListeners = (formElement, settings) => {
   toggleButtonState(inputList, buttonElement, settings);
 
   formElement.addEventListener('reset', () => {
-    buttonElement.classList.add(settings.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
+    disableButton(buttonElement, settings)
   });
 
   inputList.forEach((inputElement) => {
@@ -66,13 +65,20 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
+const disableButton = (buttonElement, settings) => {
+  buttonElement.classList.add(settings.inactiveButtonClass);
+  buttonElement.setAttribute("disabled", true);
+};
+const deleteDisableButton = (buttonElement, settings) => {
+  buttonElement.classList.remove(settings.inactiveButtonClass);
+  buttonElement.removeAttribute('disabled', true);
+};
+
 const toggleButtonState = (inputList, buttonElement, settings) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(settings.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
+    disableButton(buttonElement, settings)
   } else {
-    buttonElement.classList.remove(settings.inactiveButtonClass);
-    buttonElement.removeAttribute('disabled', true);
+    deleteDisableButton (buttonElement, settings);
   }
 };
 
