@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Учебный проект для ЯП.">
   <meta name="author" content="Катухин Евгений">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Mesto Russia</title>
 </head>
 
 <body class="page">
 
   <header class="header">
-    <img src="./images/header-logo.svg" alt="Логотип проекта" class="header__logo">
+    <img src="<%=require('./images/header-logo.svg')%>" alt="Логотип проекта" class="header__logo">
   </header>
 
   <main>
     <section class="profile">
-      <img src="./images/profile-avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
+      <img src="<%=require('./images/profile-avatar.jpg')%>" alt="Аватар пользователя" class="profile__avatar">
       <div class="profile__info-container">
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -66,10 +66,10 @@
       <form class="form form-add" name="add-card" method="GET" action="#" novalidate>
         <h3 class="form__header">Новое место</h3>
         <fieldset class="form__fieldset">
-          <input type="text" class="form__input form__input_type_title" name="card-name" id="cardname"
+          <input type="text" class="form__input form__input_type_title" name="card_name" id="cardname"
             placeholder="Название" required minlength="2" maxlength="30">
           <span class="form__input-error cardname-error"></span>
-          <input type="url" class="form__input form__input_type_link" name="card-link" id="cardlink"
+          <input type="url" class="form__input form__input_type_link" name="card_link" id="cardlink"
             placeholder="Ссылка на картинку" required>
           <span class="form__input-error cardlink-error"></span>
         </fieldset>
@@ -101,7 +101,7 @@
     </li>
   </template>
 
-  <script type='module' src="./scripts/index.js"></script>
+  <!-- <script type='module' src="./pages/index.js"></script> -->
 
 </body>
 

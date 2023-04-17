@@ -1,10 +1,11 @@
-import { showImage } from "./index.js";
 
-export class Card {
-  constructor(data, templateSelector) {
+
+export default class Card {
+  constructor(data, templateSelector, handleCardClick) {
     this._link = data.link;
     this._name = data.name;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -41,11 +42,8 @@ export class Card {
   _setEventListeners() {
     this._cardElementLikeButton.addEventListener('click', () => this._likeCard());
     this._cardElementDeleteButton.addEventListener('click', () => this._deleteCard());
-    this._cardElementImage.addEventListener('click', () => {
-      showImage({
-        name:this._name,
-        link:this._link
-      })
-    });
+    this._cardElementImage.addEventListener('click', () =>
+      this._handleCardClick(this._name, this._link)
+    );
   }
 }
