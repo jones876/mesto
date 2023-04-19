@@ -5,6 +5,7 @@
   flex-direction: column;
   border: none;
   width: 358px;
+  min-height: 60px;
 }
 @media (max-width: 910px) {
   .form__fieldset {

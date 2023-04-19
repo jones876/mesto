@@ -6,26 +6,15 @@ import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWIthForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
-import { initialCards, formValidationSettings} from "../utils/constants.js";
-
-
-const profileEditButton = document.querySelector('.profile__edit-btn');
-
-const userName = document.querySelector('.profile__name');
-const userNameInput = document.querySelector('.form__input_type_name');
-const userInfo = document.querySelector('.profile__description');
-const userInfoInput = document.querySelector('.form__input_type_info');
-const formEditProfile = document.forms['edit-form'];
-const cardAddButton = document.querySelector('.profile__add-btn');
-const profileEditPopup = document.querySelector('.popup-edit-profile');
-const cardAddPopup = document.querySelector('.popup-add-card');
-
-const cardContainer = document.querySelector('.elements__list');
-const imageShowPopup = document.querySelector('.popup-show-image');
-
-const formAddElement = document.forms['add-card'];
-
-
+import { initialCards, formValidationSettings} from '../utils/constants.js';
+import {
+  profileEditButton,
+  userNameInput,
+  userInfoInput,
+  formEditProfile,
+  cardAddButton,
+  formAddElement
+} from '../utils/constants.js'
 
 
 function createCard(data, templateSelector) {
@@ -34,7 +23,7 @@ function createCard(data, templateSelector) {
 }
 
 
-const popupOpenImage = new PopupWithImage(imageShowPopup);
+const popupOpenImage = new PopupWithImage('.popup-show-image');
 function handleCardClick(name, link) {
  popupOpenImage.open(name, link);
 }
@@ -50,9 +39,9 @@ validatorAddCard.enableValidation();
 
 
 const section = new Section({
-  items: initialCards,
+  cards: initialCards,
   renderer: renderCard
-}, cardContainer);
+}, '.elements__list');
 section.renderItems();
 
 function renderCard(newCard) {
@@ -61,12 +50,12 @@ function renderCard(newCard) {
 }
 
 const user = new UserInfo({
-  userNameSelector: userName,
-  userInfoSelector: userInfo
+  userNameSelector: '.profile__name',
+  userInfoSelector: '.profile__description'
 });
 
 const popupEdit = new PopupWIthForm({
-  popupSelector: profileEditPopup,
+  popupSelector: '.popup-edit-profile',
   handleFormSubmit: (data) => {
     user.setUserInfo(data);
     popupEdit.close();
@@ -82,7 +71,7 @@ profileEditButton.addEventListener('click', ()=>{
 
 
 const popupCardAdd = new PopupWIthForm({
-  popupSelector: cardAddPopup,
+  popupSelector: '.popup-add-card',
   handleFormSubmit: (data) => {
     renderCard({name:data.card_name, link:data.card_link});
     popupCardAdd.close();

@@ -9,12 +9,12 @@
   color: #000000;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
-  margin-top: 25px;
+
   outline: none;
 }
-  
+
 @media (max-width: 910px) {
  .form__input {
-   margin-top: 20px;
+   margin-top: 7px;
 }
 }
