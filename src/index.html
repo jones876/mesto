@@ -17,16 +17,17 @@
 
   <main>
     <section class="profile">
+      <button class="profile__edit-avatar-btn" type="button" aria-label="EditAvatar"></button>
       <img src="<%=require('./images/profile-avatar.jpg')%>" alt="Аватар пользователя" class="profile__avatar">
       <div class="profile__info-container">
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-btn" type="button">
+          <button class="profile__edit-btn" type="button" aria-label="EditProfile">
           </button>
         </div>
         <p class="profile__description">Исследователь океана</p>
       </div>
-      <button class="profile__add-btn" type="button">
+      <button class="profile__add-btn" type="button" aria-label="AddCard">
       </button>
     </section>
 
@@ -54,11 +55,11 @@
             required minlength="2" maxlength="200">
           <span class="form__input-error userabout-error"></span>
         </fieldset>
-        <button class="form__btn" type="submit">
+        <button class="form__btn" type="submit" aria-label="SaveChanges">
           Сохранить
         </button>
       </form>
-      <button class="popup__close-btn" type="button"></button>
+      <button class="popup__close-btn" type="button" aria-label="ClosePopup"></button>
     </div>
   </div>
 
@@ -76,11 +77,11 @@
             placeholder="Ссылка на картинку" required>
           <span class="form__input-error cardlink-error"></span>
         </fieldset>
-        <button class="form__btn form__btn-add" type="submit">
+        <button class="form__btn form__btn-add" type="submit" aria-label="CreateCard">
           Создать
         </button>
       </form>
-      <button class="popup__close-btn popup__close-add" type="button"></button>
+      <button class="popup__close-btn popup__close-add" type="button" aria-label="ClosePopup"></button>
     </div>
   </div>
 
@@ -88,17 +89,48 @@
     <div class="popup__full-image">
       <img class="popup__img" src="#" alt="Изображение места">
       <h3 class="popup__img-title"></h3>
-      <button class="popup__close-btn popup__close-img" type="button"></button>
+      <button class="popup__close-btn popup__close-img" type="button" aria-label="ClosePopup"></button>
     </div>
   </div>
+
+  <div class="popup popup-confirm-delete">
+    <div class="popup__container">
+      <form class="form form-confirm-delete" name="del-card">
+        <h3 class="form__header">Вы уверены?</h3>
+        <button class="form__btn form__btn-del" type="submit" aria-label="DeleteCard">Да</button>
+      </form>
+      <button class="popup__close-btn popup__close-img" type="button" aria-label="ClosePopup"></button>
+    </div>
+  </div>
+
+  <div class="popup popup-update-avatar">
+    <div class="popup__container">
+      <form action="#" class="form form-update-avatar" name="update-avatar" novalidate>
+        <h3 class="form__header">Обновить аватар</h3>
+        <fieldset class="form__fieldset">
+          <input type="url" class="form__input form__input_type_link" name="avatar" id="avatarlink"
+            placeholder="Ссылка на аватар" required>
+          <span class="form__input-error avatarlink-error"></span>
+        </fieldset>
+        <button class="form__btn form__btn-update" type="submit" aria-label="SaveChanges">
+          Сохранить
+        </button>
+      </form>
+      <button class="popup__close-btn" aria-label="ClosePopup"></button>
+    </div>
+  </div>
+
 
   <template id="template-card">
     <li class="elements__item">
       <img src="#" alt="Изображение места" class="elements__image">
       <div class="elements__description">
         <h2 class="elements__title"></h2>
-        <button class="elements__like-btn" type="button">
-        </button>
+        <div class="elements__like-container">
+          <button class="elements__like-btn" type="button">
+          </button>
+          <p class="elements__like-counter"></p>
+        </div>
       </div>
       <button class="elements__del-btn" type="button"></button>
     </li>

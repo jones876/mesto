@@ -39,4 +39,6 @@
 @import url(../blocks/form/__input-error/_active/form__input-error_active.css);
 @import url(../blocks/form/__input/_type_error/form__input_type_error.css);
 @import url(../blocks/form/__btn/_inactive/form__btn_inactive.css);
-
+@import url(../blocks/profile/__edit-avatar-btn/profile__edit-avatar-btn.css);
+@import url(../blocks/elements/__like-counter/elements__like-counter.css);
+@import url(../blocks/elements/__like-container/elements__like-container.css);

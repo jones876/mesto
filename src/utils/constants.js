@@ -40,3 +40,5 @@ export const userInfoInput = document.querySelector('.form__input_type_info');
 export const formEditProfile = document.forms['edit-form'];
 export const cardAddButton = document.querySelector('.profile__add-btn');
 export const formAddElement = document.forms['add-card'];
+export const avatarEditButton = document.querySelector('.profile__edit-avatar-btn');
+export const formEditAvatar = document.forms['update-avatar'];
