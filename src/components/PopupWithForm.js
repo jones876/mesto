@@ -33,7 +33,7 @@ export default class PopupWithForm extends Popup {
       this._handleFormSubmit(this._getInputValues());
     });
   }
-  viewLoader(load, text) {
+  viewLoader(load) {
     if (load) {
       if (!this._submitButton) return;
       this._submitButton.textContent = 'Сохранение...';
