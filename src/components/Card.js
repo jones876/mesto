@@ -13,7 +13,7 @@ export default class Card {
     this._link = data.link;
     this._name = data.name;
     this._dataLikes = data.likes;
-    this._cardId = data._id;
+    this.cardId = data._id;
     this._userCardId = data.owner._id;
     this._counterLikes = data.likes.length;
     this._templateSelector = templateSelector;
@@ -59,9 +59,9 @@ export default class Card {
 
   toogleLikes() {
     if (this.isLiked()) {
-      this._handleDelLike(this._cardId);
+      this._handleDelLike(this.cardId);
     } else {
-      this._handleLikeCard(this._cardId);
+      this._handleLikeCard(this.cardId);
     }
   }
   deleteCard() {
@@ -88,7 +88,7 @@ export default class Card {
       this.toogleLikes()
     );
     this._cardElementDeleteButton.addEventListener('click', () =>
-      this._handleDelCard(this, this.cardId)
+      this._handleDelCard(this.cardElement, this.cardId)
     );
     this._cardElementImage.addEventListener('click', () =>
       this._handleCardClick()

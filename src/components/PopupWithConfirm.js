@@ -1,31 +1,32 @@
 import Popup from './Popup';
 
 export default class PopupWithConfirm extends Popup {
-  constructor(popupSelector, { handleFormSubmit }) {
+  constructor(popupSelector) {
     super(popupSelector);
     this._popupForm = this._popup.querySelector('.form');
     this._submitButton = this._popupForm.querySelector('.form__btn');
-    // this._submit = submit;
-    this._handleFormSubmit = handleFormSubmit;
+    this.defaultText = this._submitButton.textContent;
   }
   open(cardElement, cardId) {
     super.open();
     this.id = cardId;
     this.card = cardElement;
   }
-  viewLoader(load, text) {
-    if (!this._submitButton) return;
+  viewLoader(load) {
     if (load) {
-      this.defaultText = this._submitButton.textContent;
-      this._submitButton.textContent = text;
+      if (!this._submitButton) return;
+      this._submitButton.textContent = 'Сохранение...';
     } else {
       this._submitButton.textContent = this.defaultText;
     }
   }
   setEventListeners() {
-    super.setEventListeners();
-    this._submitButton.addEventListener('click', () => {
-      this._handleFormSubmit(this.id, this.card);
+    this._submitButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      this._handleDeleteSubmit();
     });
+  }
+  setSubmitAction(action) {
+    this._handleDeleteSubmit = action;
   }
 }
